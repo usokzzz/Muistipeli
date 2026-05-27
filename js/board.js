@@ -9,6 +9,10 @@ let secondCard = null;
 let lockBoard = false;
 let attempts = 0;
 let attemptCounter;
+let timer;
+let seconds = 0;
+let timerElement;
+let totalCards = 0;
 
 let previousAttempts = [];
 
@@ -23,6 +27,9 @@ function shuffle(array) {
 export function createBoard(cardCount) {
     const gameBoard = document.getElementById('game-board');
     attemptCounter = document.getElementById('attempt-counter');
+    timerElement = document.getElementById('timer');
+
+    totalCards = cardCount;
 
     gameBoard.innerHTML = '';
 
@@ -30,8 +37,17 @@ export function createBoard(cardCount) {
     const cards = [...selectedCards, ...selectedCards];
 
     shuffle(cards);
+
+    clearInterval(timer);
+
+seconds = 0;
+timerElement.textContent = 'Aika: 0s';
+
+timer = setInterval(() => {
+    seconds++;
+    timerElement.textContent = `Aika: ${seconds}s`;
+}, 1000);
     
-    console.log(cards);
 
     cards.forEach(card => {
     const cardElement = createCardElement(card);
@@ -94,6 +110,11 @@ function checkForMatch() {
 }
 
 function disableCards() {
+    const flippedCards = document.querySelectorAll('.flipped');
+
+if (flippedCards.length === totalCards) {
+    clearInterval(timer);
+}
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
     resetBoard();
