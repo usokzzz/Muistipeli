@@ -7,6 +7,8 @@ const gameBoard = document.getElementById('game-board');
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
+let attempts = 0;
+const attemptCounter = document.getElementById('attempt-counter');
 
 function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
@@ -51,6 +53,9 @@ function handleCardFlip(cardElement) {
     }
 
     secondCard = cardElement;
+
+    attempts++;
+attemptCounter.textContent = `Yritykset: ${attempts}`;
 
     lockBoard = true;
     
