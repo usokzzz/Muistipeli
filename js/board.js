@@ -24,6 +24,8 @@ export function createBoard(cardCount) {
     gameBoard = document.getElementById('game-board');
     attemptCounter = document.getElementById('attempt-counter');
 
+    gameBoard.innerHTML = '';
+
     const selectedCards = allCards.slice(0, cardCount / 2);
     const cards = [...selectedCards, ...selectedCards];
 
