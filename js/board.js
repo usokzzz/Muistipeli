@@ -37,6 +37,9 @@ export function restartGame(cardCount) {
     secondCard = null;
     lockBoard = false;
 
+    attempts = 0;
+attemptCounter.textContent = 'Yritykset: 0';
+
     createBoard(cardCount);
 }
 
