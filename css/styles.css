@@ -10,8 +10,11 @@ body {
 
 #game-board {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-gap: 10px;
+    grid-template-columns: repeat(4, minmax(70px, 100px));
+    gap: 10px;
+    width: 90vw;
+    max-width: 450px;
+    justify-content: center;
 }
 
 #controls {
