@@ -65,25 +65,25 @@ function handleCardFlip(cardElement) {
     if (lockBoard) return;
     if (cardElement === firstCard) return;
 
-
     if (!firstCard) {
         firstCard = cardElement;
         return;
     }
 
     secondCard = cardElement;
+
     lockBoard = true;
 
-const attemptKey = [firstCard.dataset.card, secondCard.dataset.card]
-    .sort()
-    .join('-');
+    const attemptKey = [firstCard.dataset.card, secondCard.dataset.card]
+        .sort()
+        .join('-');
 
-if (!previousAttempts.includes(attemptKey)) {
-    previousAttempts.push(attemptKey);
+    if (!previousAttempts.includes(attemptKey)) {
+        previousAttempts.push(attemptKey);
 
-    attempts++;
-    attemptCounter.textContent = `Yritykset: ${attempts}`;
-}
+        attempts++;
+        attemptCounter.textContent = `Yritykset: ${attempts}`;
+    }
     
     checkForMatch();
 }
