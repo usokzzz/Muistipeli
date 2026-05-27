@@ -22,7 +22,7 @@ function shuffle(array) {
 
 export function createBoard(cardCount) {
     const gameBoard = document.getElementById('game-board');
-    const attemptCounter = document.getElementById('attempt-counter');
+    attemptCounter = document.getElementById('attempt-counter');
 
     gameBoard.innerHTML = '';
 
@@ -46,7 +46,7 @@ export function createBoard(cardCount) {
 }
 export function restartGame(cardCount) {
     const gameBoard = document.getElementById('game-board');
-const attemptCounter = document.getElementById('attempt-counter');
+attemptCounter = document.getElementById('attempt-counter');
     
     gameBoard.innerHTML = '';
 
