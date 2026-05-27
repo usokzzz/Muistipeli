@@ -31,6 +31,8 @@ export function createBoard(cardCount) {
 
     shuffle(cards);
     
+    console.log(cards);
+
     cards.forEach(card => {
     const cardElement = createCardElement(card);
 
