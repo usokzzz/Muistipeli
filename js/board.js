@@ -10,6 +10,8 @@ let lockBoard = false;
 let attempts = 0;
 const attemptCounter = document.getElementById('attempt-counter');
 
+let previousAttempts = [];
+
 function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
 }
@@ -38,6 +40,7 @@ export function restartGame(cardCount) {
     lockBoard = false;
 
     attempts = 0;
+    previousAttempts = [];
 attemptCounter.textContent = 'Yritykset: 0';
 
     createBoard(cardCount);
@@ -57,8 +60,16 @@ function handleCardFlip(cardElement) {
 
     secondCard = cardElement;
 
+const attemptKey = [firstCard.dataset.card, secondCard.dataset.card]
+    .sort()
+    .join('-');
+
+if (!previousAttempts.includes(attemptKey)) {
+    previousAttempts.push(attemptKey);
+
     attempts++;
-attemptCounter.textContent = `Yritykset: ${attempts}`;
+    attemptCounter.textContent = `Yritykset: ${attempts}`;
+}
 
     lockBoard = true;
     
