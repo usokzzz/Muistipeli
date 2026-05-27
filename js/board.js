@@ -3,12 +3,12 @@ import { createCardElement, flipCard } from './card.js';
 const allCards = [
     '🍎', '🍐', '🍒', '🍉', '🍇', '🍓', '🍌', '🍍', '🥝', '🥥', '🍑', '🍈', '🍋', '🍊', '🍏', '🍅'
 ];
-const gameBoard = document.getElementById('game-board');
+let gameBoard;
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 let attempts = 0;
-const attemptCounter = document.getElementById('attempt-counter');
+let attemptCounter;
 
 let previousAttempts = [];
 
@@ -21,8 +21,12 @@ function shuffle(array) {
 }
 
 export function createBoard(cardCount) {
+    gameBoard = document.getElementById('game-board');
+    attemptCounter = document.getElementById('attempt-counter');
+
     const selectedCards = allCards.slice(0, cardCount / 2);
     const cards = [...selectedCards, ...selectedCards];
+
     shuffle(cards);
     
     cards.forEach(card => {
