@@ -1,20 +1,24 @@
 import { createBoard, restartGame } from './board.js';
+
 let currentCardCount;
 
 document.addEventListener('DOMContentLoaded', () => {
-    const cardCount = parseInt(prompt("Syötä korttien määrä (parillinen luku):"), 10);
+    const startButton = document.getElementById('start-button');
+    const restartButton = document.getElementById('restart-button');
+    const cardSelect = document.getElementById('card-count-select');
 
-    if (cardCount % 2 !== 0) {
-        alert("Korttien määrän täytyy olla parillinen luku.");
-        return;
-    }
+    startButton.addEventListener('click', () => {
+        const cardCount = parseInt(cardSelect.value);
 
-    currentCardCount = cardCount;
+        currentCardCount = cardCount;
 
-    createBoard(cardCount);
+        restartGame(cardCount);
+    });
 
-    document.getElementById('restart-button')
-        .addEventListener('click', () => {
-            restartGame(currentCardCount);
-        });
+    restartButton.addEventListener('click', () => {
+        restartGame(currentCardCount);
+    });
+
+    currentCardCount = parseInt(cardSelect.value);
+    createBoard(currentCardCount);
 });
