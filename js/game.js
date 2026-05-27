@@ -18,7 +18,4 @@ document.addEventListener('DOMContentLoaded', () => {
     restartButton.addEventListener('click', () => {
         restartGame(currentCardCount);
     });
-
-    currentCardCount = parseInt(cardSelect.value);
-    createBoard(currentCardCount);
 });
