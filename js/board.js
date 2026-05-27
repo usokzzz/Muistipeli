@@ -28,6 +28,15 @@ export function createBoard(cardCount) {
     gameBoard.appendChild(cardElement);
 });
 }
+export function restartGame(cardCount) {
+    gameBoard.innerHTML = '';
+
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+
+    createBoard(cardCount);
+}
 
 function handleCardFlip(cardElement) {
     if (lockBoard) return;
