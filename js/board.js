@@ -74,6 +74,7 @@ function handleCardFlip(cardElement) {
     }
 
     secondCard = cardElement;
+    lockBoard = true;
 
 const attemptKey = [firstCard.dataset.card, secondCard.dataset.card]
     .sort()
@@ -85,8 +86,6 @@ if (!previousAttempts.includes(attemptKey)) {
     attempts++;
     attemptCounter.textContent = `Yritykset: ${attempts}`;
 }
-
-    lockBoard = true;
     
     checkForMatch();
 }
