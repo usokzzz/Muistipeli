@@ -36,6 +36,9 @@ function handleCardFlip(cardElement) {
     }
 
     secondCard = cardElement;
+
+    lockBoard = true;
+    
     checkForMatch();
 }
 
