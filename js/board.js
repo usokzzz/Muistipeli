@@ -16,11 +16,17 @@ export function createBoard(cardCount) {
     const selectedCards = allCards.slice(0, cardCount / 2);
     const cards = [...selectedCards, ...selectedCards];
     shuffle(cards);
+    
     cards.forEach(card => {
-        const cardElement = createCardElement(card);
-        cardElement.addEventListener('click', () => flipCard(cardElement, handleCardFlip));
-        gameBoard.appendChild(cardElement);
+    const cardElement = createCardElement(card);
+
+    cardElement.addEventListener('click', () => {
+        if (lockBoard) return;
+        flipCard(cardElement, handleCardFlip);
     });
+
+    gameBoard.appendChild(cardElement);
+});
 }
 
 function handleCardFlip(cardElement) {
