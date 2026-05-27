@@ -8,9 +8,21 @@
 </head>
 <body>
     <h1>Muistipeli</h1>
-    <button id="restart-button">Restart Game</button>
-    <p id="attempt-counter">Yritykset: 0</p>
+
+    <div id="controls">
+        <select id="card-count-select">
+            <option value="8">8 korttia</option>
+            <option value="12" selected>12 korttia</option>
+            <option value="16">16 korttia</option>
+        </select>
+
+        <button id="start-button">Aloita peli</button>
+
+        <button id="restart-button">Restart Game</button>
+
+        <p id="attempt-counter">Yritykset: 0</p>
+    </div>
+
     <div id="game-board"></div>
-    <script type="module" src="./js/game.js"></script>
 </body>
 </html>
