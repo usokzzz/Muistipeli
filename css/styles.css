@@ -24,6 +24,9 @@ body {
     font-size: 24px;
     cursor: pointer;
 }
+#restart-button {
+    margin-bottom: 20px;
+}
 
 .card.flipped {
     background-color: #fff;
