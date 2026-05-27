@@ -45,6 +45,8 @@ export function createBoard(cardCount) {
 });
 }
 export function restartGame(cardCount) {
+    gameBoard = document.getElementById('game-board');
+attemptCounter = document.getElementById('attempt-counter');
     gameBoard.innerHTML = '';
 
     firstCard = null;
