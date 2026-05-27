@@ -21,8 +21,8 @@ function shuffle(array) {
 }
 
 export function createBoard(cardCount) {
-    gameBoard = document.getElementById('game-board');
-    attemptCounter = document.getElementById('attempt-counter');
+    const gameBoard = document.getElementById('game-board');
+    const attemptCounter = document.getElementById('attempt-counter');
 
     gameBoard.innerHTML = '';
 
@@ -45,8 +45,9 @@ export function createBoard(cardCount) {
 });
 }
 export function restartGame(cardCount) {
-    gameBoard = document.getElementById('game-board');
-attemptCounter = document.getElementById('attempt-counter');
+    const gameBoard = document.getElementById('game-board');
+const attemptCounter = document.getElementById('attempt-counter');
+    
     gameBoard.innerHTML = '';
 
     firstCard = null;
