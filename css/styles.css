@@ -15,8 +15,8 @@ body {
 }
 
 .card {
-    width: 100px;
-    height: 100px;
+    aspect-ratio: 1 / 1;
+    width: 100%;
     background-color: #ccc;
     display: flex;
     align-items: center;
