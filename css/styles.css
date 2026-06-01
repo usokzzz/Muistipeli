@@ -1,50 +1,79 @@
 body {
     font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+
+    min-height: 100vh;
     margin: 0;
+    padding: 20px;
 }
 
-#game-board {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(70px, 100px));
-    gap: 10px;
-    width: 90vw;
-    max-width: 450px;
-    justify-content: center;
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
 }
 
 #controls {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 12px;
+
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 25px;
 }
 
 select,
 button {
-    padding: 8px 14px;
+    padding: 10px 16px;
     font-size: 16px;
+    border: none;
+    border-radius: 10px;
 }
+
+button {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(70px, 100px));
+    gap: 12px;
+}
+
 .card {
     width: 100px;
     height: 100px;
-    background-color: #ccc;
+
+    background: #334155;
+    border-radius: 12px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+
+    font-size: 32px;
     cursor: pointer;
+
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-#restart-button {
-    margin-bottom: 20px;
+.card:hover {
+    transform: scale(1.05);
 }
 
 .card.flipped {
-    background-color: #fff;
+    background: white;
 }
